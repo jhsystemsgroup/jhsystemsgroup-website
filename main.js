@@ -145,20 +145,6 @@
     show(new Date().getMonth());
   }
 
-  /* ---------- sign-up form mock ---------- */
-  const signup = $("#signup");
-  if (signup) {
-    const list = $(".occ-list", signup), add = $(".add-occ", signup);
-    const tpl = (rel, occ) => `<div class="occ"><label>Who it's for<select><option${rel === "Wife" ? " selected" : ""}>Wife</option><option${rel === "Mom" ? " selected" : ""}>Mom</option><option>Daughter</option><option>Girlfriend</option><option>Friend</option><option>Coworker</option></select></label><label>Occasion<select><option${occ === "Birthday" ? " selected" : ""}>Birthday</option><option${occ === "Anniversary" ? " selected" : ""}>Anniversary</option><option${occ === "Mother's Day" ? " selected" : ""}>Mother's Day</option><option>Valentine's Day</option></select></label></div>`;
-    const seeds = [["Mom", "Mother's Day"], ["Wife", "Anniversary"], ["Daughter", "Birthday"], ["Mom", "Birthday"], ["Friend", "Birthday"]];
-    let n = 1;
-    list.innerHTML = tpl("Mom", "Mother's Day");
-    add.addEventListener("click", () => {
-      list.insertAdjacentHTML("beforeend", tpl(...seeds[n % seeds.length])); n++;
-      if (n >= 6) { add.disabled = true; add.textContent = "Up to 6 occasions per customer"; }
-    });
-  }
-
   /* ---------- scheduler ---------- */
   const sched = $("#scheduler");
   if (sched) {
