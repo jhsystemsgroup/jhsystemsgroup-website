@@ -24,10 +24,10 @@
   const demo = $("#demo");
   if (demo) {
     const scenarios = {
-      mom: { label: "Mom's birthday", who: "Mom", whoName: "Linda", occasion: "Birthday", msg: "Hi Mark! Your mom's birthday is in 2 days 🌷 Want us to put together something she'll love? Pickup or delivery?", note: "Loves tulips and anything yellow. No lilies." },
-      anniv: { label: "Anniversary", who: "Wife", whoName: "Sarah", occasion: "Anniversary", msg: "Hi Mark! Your anniversary with Sarah is in 2 days 💐 Want flowers ready for pickup or delivered to her?", note: "Her favorite is garden roses, soft pinks." },
-      vday: { label: "Valentine's Day", who: "Girlfriend", whoName: "Emma", occasion: "Valentine's Day", msg: "Hi Mark! Valentine's Day is in 2 days ❤️ Beat the rush and lock in Emma's flowers now. Pickup or delivery?", note: "Red roses, keep it classic." },
-      mday: { label: "Mother's Day", who: "Mom", whoName: "Linda", occasion: "Mother's Day", msg: "Hi Mark! Mother's Day is this Sunday 🌸 Want us to make something special for your mom? Pickup or delivery?", note: "Bright spring colors, no lilies." }
+      mom: { address: "418 Maple Ave, Springfield", label: "Mom's birthday", who: "Mom", whoName: "Linda", occasion: "Birthday", msg: "Hi Mark! Your mom's birthday is in 2 days 🌷 Want us to put together something she'll love? Pickup or delivery?", note: "Loves tulips and anything yellow. No lilies." },
+      anniv: { address: "1290 Oak Ridge Dr, Springfield", label: "Anniversary", who: "Wife", whoName: "Sarah", occasion: "Anniversary", msg: "Hi Mark! Your anniversary with Sarah is in 2 days 💐 Want flowers ready for pickup or delivered to her?", note: "Her favorite is garden roses, soft pinks." },
+      vday: { address: "77 Willow Ln, Apt 4B, Springfield", label: "Valentine's Day", who: "Girlfriend", whoName: "Emma", occasion: "Valentine's Day", msg: "Hi Mark! Valentine's Day is in 2 days ❤️ Beat the rush and lock in Emma's flowers now. Pickup or delivery?", note: "Red roses, keep it classic." },
+      mday: { address: "418 Maple Ave, Springfield", label: "Mother's Day", who: "Mom", whoName: "Linda", occasion: "Mother's Day", msg: "Hi Mark! Mother's Day is this Sunday 🌸 Want us to make something special for your mom? Pickup or delivery?", note: "Bright spring colors, no lilies." }
     };
     const thread = $(".thread", demo), chips = $$(".chip", demo), replies = $$(".replies button", demo), ticket = $(".ticket", demo);
     let current = "mom", timers = [];
@@ -68,6 +68,8 @@
         $("[data-f=occ]", ticket).textContent = s.occasion;
         $("[data-f=date]", ticket).textContent = dateIn2();
         $("[data-f=type]", ticket).textContent = kind === "delivery" ? "Delivery" : "Pickup";
+        $("[data-f=addr]", ticket).textContent = s.address;
+        $$(".addr", ticket).forEach(el => el.hidden = kind !== "delivery");
         $(".note", ticket).textContent = "“" + s.note + "”";
         later(() => ticket.classList.add("show"), 450);
       }, 1100);
