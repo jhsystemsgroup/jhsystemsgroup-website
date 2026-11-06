@@ -24,10 +24,10 @@
   const demo = $("#demo");
   if (demo) {
     const scenarios = {
-      mom: { address: "418 Maple Ave, Springfield", label: "Mom's birthday", who: "Mom", whoName: "Linda", occasion: "Birthday", msg: "Hi Mark! Your mom's birthday is in 2 days 🌷 Want us to put together something she'll love? Pickup or delivery?", note: "Loves tulips and anything yellow. No lilies." },
-      anniv: { address: "1290 Oak Ridge Dr, Springfield", label: "Anniversary", who: "Wife", whoName: "Sarah", occasion: "Anniversary", msg: "Hi Mark! Your anniversary with Sarah is in 2 days 💐 Want flowers ready for pickup or delivered to her?", note: "Her favorite is garden roses, soft pinks." },
-      vday: { address: "77 Willow Ln, Apt 4B, Springfield", label: "Valentine's Day", who: "Girlfriend", whoName: "Emma", occasion: "Valentine's Day", msg: "Hi Mark! Valentine's Day is in 2 days ❤️ Beat the rush and lock in Emma's flowers now. Pickup or delivery?", note: "Red roses, keep it classic." },
-      mday: { address: "418 Maple Ave, Springfield", label: "Mother's Day", who: "Mom", whoName: "Linda", occasion: "Mother's Day", msg: "Hi Mark! Mother's Day is this Sunday 🌸 Want us to make something special for your mom? Pickup or delivery?", note: "Bright spring colors, no lilies." }
+      mom: { address: "418 Maple Ave, Springfield", label: "Mom's birthday", who: "Mom", whoName: "Linda", occasion: "Birthday", msg: "Hi Mark! Your mom's birthday is in 2 days. We will have her custom flowers ready for you. Pickup or delivery?", note: "Loves tulips and anything yellow. No lilies." },
+      anniv: { address: "1290 Oak Ridge Dr, Springfield", label: "Anniversary", who: "Wife", whoName: "Sarah", occasion: "Anniversary", msg: "Hi Mark! Your anniversary with Sarah is in 2 days. We will have her custom flowers ready for you. Pickup or delivery?", note: "Her favorite is garden roses, soft pinks." },
+      vday: { address: "77 Willow Ln, Apt 4B, Springfield", label: "Valentine's Day", who: "Girlfriend", whoName: "Emma", occasion: "Valentine's Day", msg: "Hi Mark! Valentine's Day is in 2 days. We will have Emma's custom flowers ready for you. Pickup or delivery?", note: "Red roses, keep it classic." },
+      mday: { address: "418 Maple Ave, Springfield", label: "Mother's Day", who: "Mom", whoName: "Linda", occasion: "Mother's Day", msg: "Hi Mark! Mother's Day is this Sunday. We will have your mom's custom flowers ready for you. Pickup or delivery?", note: "Bright spring colors, no lilies." }
     };
     const thread = $(".thread", demo), chips = $$(".chip", demo), replies = $$(".replies button", demo), ticket = $(".ticket", demo);
     let current = "mom", timers = [];
