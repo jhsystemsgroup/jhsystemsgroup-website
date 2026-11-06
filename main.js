@@ -24,10 +24,10 @@
   const demo = $("#demo");
   if (demo) {
     const scenarios = {
-      mom: { address: "418 Maple Ave, Springfield", label: "Mom's birthday", who: "Mom", whoName: "Linda", occasion: "Birthday", msg: "Hi Mark! Your mom's birthday is in 2 days. We will have her custom flowers ready for you. Pickup or delivery?", note: "Loves tulips and anything yellow. No lilies." },
-      anniv: { address: "1290 Oak Ridge Dr, Springfield", label: "Anniversary", who: "Wife", whoName: "Sarah", occasion: "Anniversary", msg: "Hi Mark! Your anniversary with Sarah is in 2 days. We will have her custom flowers ready for you. Pickup or delivery?", note: "Her favorite is garden roses, soft pinks." },
-      vday: { address: "77 Willow Ln, Apt 4B, Springfield", label: "Valentine's Day", who: "Girlfriend", whoName: "Emma", occasion: "Valentine's Day", msg: "Hi Mark! Valentine's Day is in 2 days. We will have Emma's custom flowers ready for you. Pickup or delivery?", note: "Red roses, keep it classic." },
-      mday: { address: "418 Maple Ave, Springfield", label: "Mother's Day", who: "Mom", whoName: "Linda", occasion: "Mother's Day", msg: "Hi Mark! Mother's Day is this Sunday. We will have your mom's custom flowers ready for you. Pickup or delivery?", note: "Bright spring colors, no lilies." }
+      mom: { cheer: "Hope she has a great birthday!", address: "418 Maple Ave, Springfield", label: "Mom's birthday", who: "Mom", whoName: "Linda", occasion: "Birthday", msg: "Hi Mark! Your mom's birthday is in 2 days. We will have her custom flowers ready for you. Pickup or delivery?", note: "Loves tulips and anything yellow. No lilies." },
+      anniv: { cheer: "Happy anniversary!", address: "1290 Oak Ridge Dr, Springfield", label: "Anniversary", who: "Wife", whoName: "Sarah", occasion: "Anniversary", msg: "Hi Mark! Your anniversary with Sarah is in 2 days. We will have her custom flowers ready for you. Pickup or delivery?", note: "Her favorite is garden roses, soft pinks." },
+      vday: { cheer: "Happy Valentine's Day!", address: "77 Willow Ln, Apt 4B, Springfield", label: "Valentine's Day", who: "Girlfriend", whoName: "Emma", occasion: "Valentine's Day", msg: "Hi Mark! Valentine's Day is in 2 days. We will have Emma's custom flowers ready for you. Pickup or delivery?", note: "Red roses, keep it classic." },
+      mday: { cheer: "Happy Mother's Day!", address: "418 Maple Ave, Springfield", label: "Mother's Day", who: "Mom", whoName: "Linda", occasion: "Mother's Day", msg: "Hi Mark! Mother's Day is this Sunday. We will have your mom's custom flowers ready for you. Pickup or delivery?", note: "Bright spring colors, no lilies." }
     };
     const thread = $(".thread", demo), chips = $$(".chip", demo), replies = $$(".replies button", demo), ticket = $(".ticket", demo);
     let current = "mom", timers = [];
@@ -37,6 +37,11 @@
     const typing = () => { const t = document.createElement("div"); t.className = "bubble in typing"; t.innerHTML = "<i></i><i></i><i></i>"; thread.appendChild(t); thread.scrollTop = thread.scrollHeight; return t; };
     const dateIn2 = () => { const d = new Date(); d.setDate(d.getDate() + 2); return d.toLocaleDateString("en-US", { month: "short", day: "numeric" }); };
 
+    const longDateIn2 = () => {
+      const d = new Date(); d.setDate(d.getDate() + 2); const n = d.getDate();
+      const suf = (n % 100 >= 11 && n % 100 <= 13) ? "th" : ({1: "st", 2: "nd", 3: "rd"}[n % 10] || "th");
+      return d.toLocaleDateString("en-US", { month: "long" }) + " " + n + suf;
+    };
     function start(key) {
       clear(); current = key; const s = scenarios[key];
       chips.forEach(c => c.setAttribute("aria-pressed", c.dataset.key === key));
@@ -61,8 +66,8 @@
       later(() => {
         t.remove();
         bubble(kind === "delivery"
-          ? `Perfect. We'll deliver to ${s.whoName} on ${dateIn2()}. Here's your secure link to choose a bouquet and pay.`
-          : `Perfect. They'll be ready for you on ${dateIn2()}. Here's your secure link to choose a bouquet and pay.`, "in");
+          ? `Sounds good! We'll deliver ${s.whoName}'s flowers on ${longDateIn2()}. ${s.cheer}`
+          : `Sounds good! ${s.whoName}'s flowers will be ready for pickup on ${longDateIn2()}. ${s.cheer}`, "in");
         $("[data-f=customer]", ticket).textContent = "Mark Ellis";
         $("[data-f=for]", ticket).textContent = `${s.whoName} (${s.who})`;
         $("[data-f=occ]", ticket).textContent = s.occasion;
