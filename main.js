@@ -101,20 +101,6 @@
     ins.forEach(i => i.addEventListener("input", run)); run();
   }
 
-  /* ---------- valentine countdown ---------- */
-  const cd = $("#countdown");
-  if (cd) {
-    const now = new Date();
-    let target = new Date(now.getFullYear(), 1, 14);
-    if (now > target) target = new Date(now.getFullYear() + 1, 1, 14);
-    function tick() {
-      const ms = target - new Date();
-      const d = Math.floor(ms / 864e5), h = Math.floor(ms / 36e5) % 24, m = Math.floor(ms / 6e4) % 60;
-      $("[data-u=d]", cd).textContent = d; $("[data-u=h]", cd).textContent = h; $("[data-u=m]", cd).textContent = m;
-    }
-    tick(); setInterval(tick, 30000);
-  }
-
   /* ---------- year of occasions ---------- */
   const year = $("#year");
   if (year) {
