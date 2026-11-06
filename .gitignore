@@ -1,0 +1,5 @@
+*.zip
+*.md
+!README.md
+.DS_Store
+__MACOSX/

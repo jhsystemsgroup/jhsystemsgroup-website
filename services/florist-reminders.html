@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flower Shops | JH Systems Group</title>
+<meta name="description" content="Automated occasion reminders for flower shops. Customers save their dates once; two days before each one they get a text asking if they'd like flowers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<link rel="icon" href="../assets/mark-navy.png">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="../index.html" aria-label="JH Systems Group home">
+      <img class="logo-light" src="../assets/logo-navy.png" alt="JH Systems Group LLC">
+      <img class="logo-dark" src="../assets/logo-cream.png" alt="JH Systems Group LLC">
+    </a>
+    <nav aria-label="Main">
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li class="has-menu">
+          <button type="button" aria-expanded="false">Services</button>
+          <ul class="menu">
+            <li><a href="florist-reminders.html"><strong>Flower Shops</strong><small>Automated occasion reminders that bring customers back</small></a></li>
+            <li><a href="../index.html#services" class="soon"><strong>More systems coming</strong><small>Tell me what your business needs</small></a></li>
+          </ul>
+        </li>
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#schedule">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-primary nav-cta" href="../index.html#schedule">Schedule a call</a>
+    <button class="burger" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <img class="flora flora-tl" src="../assets/flora-left.jpg" alt="">
+    <img class="flora flora-br" src="../assets/flora-right.jpg" alt="">
+    <div class="wrap">
+      <div>
+        <p class="crumb"><a href="../index.html#services">Services</a> / Flower Shops</p>
+        <h1>Never miss the next flower order.</h1>
+        <p class="lede">Automated reminder systems for florists. Your customers save the dates that matter once, and your shop reaches out two days before each one, every year.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="../index.html#schedule">Schedule a demo</a>
+          <a class="btn btn-ghost" href="#how">How it works</a>
+        </div>
+      </div>
+      <div class="demo" id="demo">
+        <p class="demo-label">Try it: pick an occasion</p>
+        <div class="chips" role="group" aria-label="Choose an occasion">
+          <button class="chip" type="button" data-key="mom" aria-pressed="true">Mom's birthday</button>
+          <button class="chip" type="button" data-key="anniv" aria-pressed="false">Anniversary</button>
+          <button class="chip" type="button" data-key="vday" aria-pressed="false">Valentine's Day</button>
+          <button class="chip" type="button" data-key="mday" aria-pressed="false">Mother's Day</button>
+        </div>
+        <div class="stage">
+          <div class="tap-hint" aria-hidden="true">Try me! Tap a reply</div>
+          <div class="phone" aria-label="Example text message conversation">
+            <div class="screen">
+              <div class="notch"></div>
+              <div class="thread-head"><div class="avatar">YS</div><b>Your Flower Shop</b><small>Text message</small></div>
+              <div class="thread" aria-live="polite"></div>
+              <div class="replies">
+                <button type="button" data-kind="delivery">Delivery</button>
+                <button type="button" data-kind="pickup">Pickup</button>
+                <button type="button" data-kind="skip">Not now</button>
+              </div>
+            </div>
+          </div>
+          <div class="ticket" aria-live="polite">
+            <h4>New order for your shop</h4>
+            <dl>
+              <dt>Customer</dt><dd data-f="customer"></dd>
+              <dt>For</dt><dd data-f="for"></dd>
+              <dt>Occasion</dt><dd data-f="occ"></dd>
+              <dt>Date</dt><dd data-f="date"></dd>
+              <dt>Type</dt><dd data-f="type"></dd>
+            </dl>
+            <p class="note"></p>
+          </div>
+        </div>
+        <button class="reset" type="button">Replay</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section paper" id="how">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">How it works</p>
+        <h2>Three steps, then it runs on its own.</h2>
+      </div>
+      <ol class="steps">
+        <li><h3>They sign up at checkout</h3><p>A short form at your counter or online. Customers add who they buy for and the dates that matter: birthdays, anniversaries, Mother's Day.</p></li>
+        <li><h3>A reminder goes out</h3><p>Two days before each date, they get a friendly text or email from your shop asking if they'd like flowers for pickup or delivery.</p></li>
+        <li><h3>You get the order</h3><p>Your shop receives an email with who it's for, the occasion, the date, pickup or delivery, and notes like favorite colors or flowers to avoid.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" id="year">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">A year of reasons to come back</p>
+        <h2>Every month has a flower moment.</h2>
+        <p>Holidays bring the rush. Personal dates bring steady orders all year. Tap a month.</p>
+      </div>
+      <div class="year"></div>
+      <div class="month-detail" aria-live="polite"></div>
+      <div class="legend"><span>Holidays and seasonal moments</span><span class="p">Personal dates your customers save</span></div>
+    </div>
+  </section>
+
+
+  <section class="section paper" id="calculator">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Run your numbers</p>
+        <h2>What could reminders bring in?</h2>
+        <p>Move the sliders to match your shop. Every number here is an estimate you control.</p>
+      </div>
+      <div class="calc" id="calc">
+        <div class="calc-in">
+          <div class="field"><label for="customers">Customers signed up <output for="customers"></output></label><input id="customers" name="customers" type="range" min="25" max="1500" step="25" value="300"><small>People who save their dates at checkout</small></div>
+          <div class="field"><label for="dates">Dates saved per customer <output for="dates"></output></label><input id="dates" name="dates" type="range" min="1" max="6" step="1" value="2"><small>Birthdays, anniversaries, Mother's Day and more</small></div>
+          <div class="field"><label for="aov">Average order <output for="aov"></output></label><input id="aov" name="aov" type="range" min="40" max="250" step="5" value="85"></div>
+        </div>
+        <div class="calc-out">
+          <p class="kicker">Estimated reminder orders per year</p>
+          <div class="big" id="total">$0</div>
+          <p>That's <b id="orders">0</b> orders a year if every reminder becomes an order, from customers who might otherwise have forgotten or ordered somewhere else.</p>
+          <div class="bars" aria-hidden="true"></div>
+          <p class="fine">Illustration only, not a guarantee. It assumes every reminder becomes an order; actual results depend on your shop, your customers and how many reply.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap split">
+      <div>
+        <p class="kicker">What your customer sees</p>
+        <h2 style="margin-bottom:24px">Thirty seconds at the counter.</h2>
+        <div class="mock" id="signup">
+          <h4>Never forget a flower occasion</h4>
+          <p class="sub">Add the dates you care about and we'll remind you two days before.</p>
+          <div class="occ-list"></div>
+          <button class="add-occ" type="button">+ Add another occasion</button>
+          <div class="toggle-row">
+            <label><input type="checkbox" checked> Text me</label>
+            <label><input type="checkbox" checked> Email me</label>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p class="kicker">What your shop gets</p>
+        <h2 style="margin-bottom:24px">Every detail, ready to design.</h2>
+        <div class="mock email">
+          <div class="hdr">
+            <span><b>New reminder order</b></span>
+            <span>To: orders@yourflowershop.com</span>
+          </div>
+          <table>
+            <tr><td>Customer</td><td>Mark Ellis</td></tr>
+            <tr><td>For</td><td>Linda (Mom)</td></tr>
+            <tr><td>Occasion</td><td>Birthday</td></tr>
+            <tr><td>Type</td><td>Delivery</td></tr>
+            <tr><td>Notes</td><td>Loves tulips and anything yellow. No lilies.</td></tr>
+          </table>
+        </div>
+        <p style="color:var(--ink-soft);margin-top:18px">Notes go to your shop only. The person receiving the flowers never sees them.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section paper" id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Questions</p>
+        <h2>What florists ask first.</h2>
+      </div>
+      <div class="faq">
+        <details open><summary>Do my customers stay mine?</summary><p>Yes. The system runs under your shop's name, the reminders come from your shop, and orders come straight to you. JH Systems Group is not a wire service or marketplace.</p></details>
+        <details><summary>Do I need to learn new software?</summary><p>No. I set everything up and test it with you. Your day-to-day is reading order emails and making beautiful arrangements.</p></details>
+        <details><summary>How long does setup take?</summary><p>Most of the work happens on my end. We'll set a timeline on our first call so you're collecting dates as soon as possible, ideally well before Valentine's Day.</p></details>
+        <details><summary>How do customers pay?</summary><p>We'll set this up around how your shop already works, whether that's a secure payment link or charging the card you have on file.</p></details>
+        <details><summary>What does it cost?</summary><p>Pricing is being finalized with our founding shops. Book a call and I'll walk you through the options.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <div>
+        <h2>Start collecting dates before Valentine's Day.</h2>
+        <p>The biggest flower day of the year. I'm onboarding a small group of founding shops now.</p>
+        <a class="btn btn-primary" style="margin-top:22px" href="../index.html#schedule">Schedule a demo</a>
+      </div>
+      <div class="count" id="countdown" aria-label="Countdown to Valentine's Day">
+        <div><b data-u="d">0</b><span>days</span></div>
+        <div><b data-u="h">0</b><span>hours</span></div>
+        <div><b data-u="m">0</b><span>minutes</span></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <img class="logo-light" src="../assets/logo-navy.png" alt="JH Systems Group LLC">
+      <img class="logo-dark" src="../assets/logo-cream.png" alt="JH Systems Group LLC">
+      <small>© 2026 JH Systems Group LLC</small>
+    </div>
+    <nav aria-label="Footer">
+      <a href="florist-reminders.html">Flower Shops</a>
+      <a href="../index.html#services">Services</a>
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#schedule">Schedule a call</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="../main.js"></script>
+<script src="https://link.msgsndr.com/js/external-tracking.js" data-tracking-id="tk_4eb8e23e75264fbfb7e66188eeda1d88"></script>
+</body>
+</html>
